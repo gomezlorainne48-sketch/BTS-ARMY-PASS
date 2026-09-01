@@ -1,4 +1,3 @@
-```javascript
 /* =========================================================
    ARIRANG — BTS WORLD TOUR
    JAVASCRIPT
