@@ -1,17 +1,65 @@
 ```javascript
 /* =========================================================
-   ARIRANG — BTS WORLD TOUR
+   ARIRANG — MEMORY EXPERIENCE
    JAVASCRIPT
 ========================================================= */
 
 
 /* =========================================================
-   INTRO
+   CONCERT DATE
+========================================================= */
+
+/*
+   21 OCTOBER 2026
+   8:00 PM
+
+   Esta fecha controla el cambio de:
+
+   COUNTDOWN
+
+   a
+
+   MEMORY MODE
+*/
+
+const concertDate =
+    new Date("October 21, 2026 20:00:00").getTime();
+
+
+
+/* =========================================================
+   PHOTOS
+========================================================= */
+
+const photos = [
+
+    "images/concert-01.jpg",
+
+    "images/concert-02.jpg",
+
+    "images/concert-03.jpg",
+
+    "images/concert-04.jpg",
+
+    "images/concert-05.jpg",
+
+    "images/concert-06.jpg"
+
+];
+
+
+let currentPhoto = 0;
+
+
+
+/* =========================================================
+   ENTER EXPERIENCE
 ========================================================= */
 
 function enterExperience() {
 
-    const intro = document.getElementById("intro");
+    const intro =
+        document.getElementById("intro");
 
     const mainExperience =
         document.getElementById("mainExperience");
@@ -19,7 +67,8 @@ function enterExperience() {
 
     intro.style.opacity = "0";
 
-    intro.style.transition = "opacity 1s ease";
+    intro.style.transition =
+        "opacity 1s ease";
 
 
     setTimeout(() => {
@@ -40,52 +89,54 @@ function enterExperience() {
 
 
 /* =========================================================
-   CONCERT DATE
-========================================================= */
-
-/*
-   IMPORTANTE:
-
-   Esta es la fecha y hora que determina
-   cuándo termina el countdown.
-
-   21 de octubre de 2026
-   8:00 PM
-*/
-
-const concertDate =
-    new Date("October 21, 2026 20:00:00").getTime();
-
-
-
-/* =========================================================
    COUNTDOWN
 ========================================================= */
 
 function updateCountdown() {
 
-    const now = new Date().getTime();
+    const now =
+        new Date().getTime();
+
 
     const difference =
         concertDate - now;
 
 
     const beforeConcert =
-        document.getElementById("beforeConcert");
+        document.getElementById(
+            "beforeConcert"
+        );
+
 
     const afterConcert =
-        document.getElementById("afterConcert");
+        document.getElementById(
+            "afterConcert"
+        );
+
+
+    const memoryGallery =
+        document.getElementById(
+            "memoryGallery"
+        );
 
 
     /*
-       SI EL CONCIERTO TODAVÍA NO HA OCURRIDO
+       BEFORE CONCERT
     */
 
     if (difference > 0) {
 
-        beforeConcert.classList.remove("hidden");
+        beforeConcert.classList.remove(
+            "hidden"
+        );
 
-        afterConcert.classList.add("hidden");
+        afterConcert.classList.add(
+            "hidden"
+        );
+
+        memoryGallery.classList.add(
+            "hidden"
+        );
 
 
         const days =
@@ -119,40 +170,54 @@ function updateCountdown() {
             );
 
 
-        document.getElementById("days")
-            .textContent =
+        document.getElementById(
+            "days"
+        ).textContent =
             String(days).padStart(2, "0");
 
 
-        document.getElementById("hours")
-            .textContent =
+        document.getElementById(
+            "hours"
+        ).textContent =
             String(hours).padStart(2, "0");
 
 
-        document.getElementById("minutes")
-            .textContent =
+        document.getElementById(
+            "minutes"
+        ).textContent =
             String(minutes).padStart(2, "0");
 
 
-        document.getElementById("seconds")
-            .textContent =
+        document.getElementById(
+            "seconds"
+        ).textContent =
             String(seconds).padStart(2, "0");
 
     }
 
 
     /*
-       SI EL CONCIERTO YA PASÓ
+       AFTER CONCERT
     */
 
     else {
 
-        beforeConcert.classList.add("hidden");
+        beforeConcert.classList.add(
+            "hidden"
+        );
 
-        afterConcert.classList.remove("hidden");
+        afterConcert.classList.remove(
+            "hidden"
+        );
+
+        memoryGallery.classList.remove(
+            "hidden"
+        );
 
 
         updateMemory();
+
+        updateSecretMessage();
 
     }
 
@@ -167,25 +232,19 @@ function updateCountdown() {
 function updateMemory() {
 
     const concert =
-        new Date("October 21, 2026 20:00:00");
+        new Date(
+            "October 21, 2026 20:00:00"
+        );
 
 
     const now =
         new Date();
 
 
-    /*
-       Diferencia en milisegundos
-    */
-
     const difference =
         now.getTime() -
         concert.getTime();
 
-
-    /*
-       Convertimos a días
-    */
 
     const daysSinceConcert =
         Math.floor(
@@ -195,11 +254,13 @@ function updateMemory() {
 
 
     const memoryTitle =
-        document.getElementById("memoryTitle");
+        document.getElementById(
+            "memoryTitle"
+        );
 
 
     /*
-       EL MISMO DÍA
+       SAME DAY
     */
 
     if (daysSinceConcert <= 0) {
@@ -213,7 +274,7 @@ function updateMemory() {
 
 
     /*
-       UN DÍA
+       ONE DAY
     */
 
     if (daysSinceConcert === 1) {
@@ -227,7 +288,7 @@ function updateMemory() {
 
 
     /*
-       MENOS DE UN MES
+       LESS THAN ONE MONTH
     */
 
     if (daysSinceConcert < 30) {
@@ -241,7 +302,7 @@ function updateMemory() {
 
 
     /*
-       CALCULAMOS MESES APROXIMADOS
+       MONTHS
     */
 
     const monthsSinceConcert =
@@ -249,10 +310,6 @@ function updateMemory() {
             daysSinceConcert / 30
         );
 
-
-    /*
-       UN MES
-    */
 
     if (monthsSinceConcert === 1) {
 
@@ -263,10 +320,6 @@ function updateMemory() {
 
     }
 
-
-    /*
-       MENOS DE UN AÑO
-    */
 
     if (monthsSinceConcert < 12) {
 
@@ -279,7 +332,7 @@ function updateMemory() {
 
 
     /*
-       CALCULAMOS AÑOS
+       YEARS
     */
 
     const yearsSinceConcert =
@@ -287,10 +340,6 @@ function updateMemory() {
             monthsSinceConcert / 12
         );
 
-
-    /*
-       UN AÑO
-    */
 
     if (yearsSinceConcert === 1) {
 
@@ -301,10 +350,6 @@ function updateMemory() {
 
     }
 
-
-    /*
-       VARIOS AÑOS
-    */
 
     memoryTitle.innerHTML =
         `Hace ${yearsSinceConcert} años<br>vivimos esto.`;
@@ -317,13 +362,68 @@ function updateMemory() {
    SECRET MESSAGE
 ========================================================= */
 
+function updateSecretMessage() {
+
+    const secretTitle =
+        document.getElementById(
+            "secretTitle"
+        );
+
+
+    const secretButton =
+        document.getElementById(
+            "secretButton"
+        );
+
+
+    secretTitle.innerHTML =
+        "There is something<br><em>you'll never forget.</em>";
+
+
+    secretButton.textContent =
+        "OPEN THE MEMORY";
+
+
+    const modalTitle =
+        document.getElementById(
+            "modalTitle"
+        );
+
+
+    const modalText =
+        document.getElementById(
+            "modalText"
+        );
+
+
+    modalTitle.textContent =
+        "You were there.";
+
+
+    modalText.textContent =
+        "Y ahora este momento forma parte de tu historia. " +
+        "Una noche, una ciudad, siete voces y un recuerdo " +
+        "que podrás llevar contigo para siempre.";
+
+}
+
+
+
+/* =========================================================
+   OPEN SECRET MESSAGE
+========================================================= */
+
 function openMessage() {
 
     const modal =
-        document.getElementById("messageModal");
+        document.getElementById(
+            "messageModal"
+        );
 
 
-    modal.classList.remove("hidden");
+    modal.classList.remove(
+        "hidden"
+    );
 
 }
 
@@ -331,47 +431,236 @@ function openMessage() {
 function closeMessage() {
 
     const modal =
-        document.getElementById("messageModal");
+        document.getElementById(
+            "messageModal"
+        );
 
 
-    modal.classList.add("hidden");
+    modal.classList.add(
+        "hidden"
+    );
 
 }
 
 
 
 /* =========================================================
-   CLOSE MODAL WHEN CLICKING OUTSIDE
+   PHOTO VIEWER
 ========================================================= */
 
-window.addEventListener(
-    "click",
-    function(event) {
+function openPhoto(index) {
 
-        const modal =
-            document.getElementById("messageModal");
+    currentPhoto = index;
 
 
-        if (event.target === modal) {
+    const viewer =
+        document.getElementById(
+            "photoViewer"
+        );
 
-            closeMessage();
 
-        }
+    viewer.classList.remove(
+        "hidden"
+    );
 
-    }
-);
+
+    updateViewer();
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+
+function closePhoto() {
+
+    const viewer =
+        document.getElementById(
+            "photoViewer"
+        );
+
+
+    viewer.classList.add(
+        "hidden"
+    );
+
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+
+function updateViewer() {
+
+    const image =
+        document.getElementById(
+            "viewerImage"
+        );
+
+
+    const number =
+        document.getElementById(
+            "viewerNumber"
+        );
+
+
+    image.src =
+        photos[currentPhoto];
+
+
+    number.textContent =
+        String(currentPhoto + 1)
+        .padStart(2, "0");
+
+}
 
 
 
 /* =========================================================
-   ESC KEY
+   NEXT PHOTO
+========================================================= */
+
+function nextPhoto() {
+
+    currentPhoto++;
+
+    if (currentPhoto >= photos.length) {
+
+        currentPhoto = 0;
+
+    }
+
+    updateViewer();
+
+}
+
+
+
+/* =========================================================
+   PREVIOUS PHOTO
+========================================================= */
+
+function previousPhoto() {
+
+    currentPhoto--;
+
+    if (currentPhoto < 0) {
+
+        currentPhoto =
+            photos.length - 1;
+
+    }
+
+    updateViewer();
+
+}
+
+
+
+/* =========================================================
+   KEYBOARD PHOTO NAVIGATION
 ========================================================= */
 
 document.addEventListener(
     "keydown",
     function(event) {
 
+
         if (event.key === "Escape") {
+
+            closePhoto();
+
+            closeMessage();
+
+        }
+
+
+        if (event.key === "ArrowRight") {
+
+            const viewer =
+                document.getElementById(
+                    "photoViewer"
+                );
+
+
+            if (
+                !viewer.classList.contains(
+                    "hidden"
+                )
+            ) {
+
+                nextPhoto();
+
+            }
+
+        }
+
+
+        if (event.key === "ArrowLeft") {
+
+            const viewer =
+                document.getElementById(
+                    "photoViewer"
+                );
+
+
+            if (
+                !viewer.classList.contains(
+                    "hidden"
+                )
+            ) {
+
+                previousPhoto();
+
+            }
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
+   CLICK OUTSIDE PHOTO
+========================================================= */
+
+document.getElementById(
+    "photoViewer"
+).addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target === this
+        ) {
+
+            closePhoto();
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
+   CLICK OUTSIDE MESSAGE
+========================================================= */
+
+document.getElementById(
+    "messageModal"
+).addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target === this
+        ) {
 
             closeMessage();
 
@@ -383,14 +672,14 @@ document.addEventListener(
 
 
 /* =========================================================
-   START COUNTDOWN
+   START
 ========================================================= */
 
 updateCountdown();
 
 
 /*
-   Actualiza cada segundo
+   Actualizar cada segundo
 */
 
 setInterval(
