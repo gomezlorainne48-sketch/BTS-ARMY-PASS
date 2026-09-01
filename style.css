@@ -1,7 +1,6 @@
 ```css
 /* =========================================================
-   ARIRANG — BTS WORLD TOUR
-   MAIN STYLES
+   ARIRANG — MEMORY EXPERIENCE
 ========================================================= */
 
 
@@ -22,18 +21,17 @@ html {
 
 
 body {
+
     background: #111014;
+
     color: #eeeae4;
 
     font-family: "DM Sans", sans-serif;
 
     overflow-x: hidden;
+
 }
 
-
-/* =========================================================
-   VARIABLES
-========================================================= */
 
 :root {
 
@@ -55,28 +53,6 @@ body {
 
 
 /* =========================================================
-   FILM GRAIN
-========================================================= */
-
-.film-grain {
-
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    z-index: 999;
-
-    opacity: 0.045;
-
-    background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.8'/%3E%3C/svg%3E");
-
-}
-
-
-/* =========================================================
    GENERAL
 ========================================================= */
 
@@ -86,9 +62,27 @@ body {
 
 
 .section {
+
     position: relative;
 
     padding: 140px 10%;
+
+}
+
+
+.section-number {
+
+    position: absolute;
+
+    top: 50px;
+
+    left: 5%;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: rgba(238,234,228,0.35);
 
 }
 
@@ -108,19 +102,25 @@ body {
 }
 
 
-.section-number {
+/* =========================================================
+   FILM GRAIN
+========================================================= */
 
-    position: absolute;
+.film-grain {
 
-    top: 50px;
+    position: fixed;
 
-    left: 5%;
+    inset: 0;
 
-    font-size: 11px;
+    pointer-events: none;
 
-    letter-spacing: 3px;
+    z-index: 999;
 
-    color: rgba(238, 234, 228, 0.35);
+    opacity: 0.045;
+
+    background-image:
+
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.8'/%3E%3C/svg%3E");
 
 }
 
@@ -139,9 +139,9 @@ body {
 
     display: flex;
 
-    justify-content: center;
-
     align-items: center;
+
+    justify-content: center;
 
     text-align: center;
 
@@ -323,13 +323,6 @@ body {
 }
 
 
-.hero .eyebrow {
-
-    margin-bottom: 15px;
-
-}
-
-
 .hero h2 {
 
     font-family: "Playfair Display", serif;
@@ -394,9 +387,9 @@ body {
 
     display: flex;
 
-    justify-content: center;
-
     align-items: center;
+
+    justify-content: center;
 
 }
 
@@ -424,8 +417,6 @@ body {
 .story h2 em {
 
     color: var(--purple-light);
-
-    font-weight: 400;
 
 }
 
@@ -762,8 +753,6 @@ body {
 
     font-size: clamp(45px, 7vw, 80px);
 
-    font-weight: 400;
-
 }
 
 
@@ -792,10 +781,14 @@ body {
 
 
 /* =========================================================
-   MEMORY AFTER CONCERT
+   MEMORY MODE
 ========================================================= */
 
 .memory-container {
+
+    position: relative;
+
+    padding: 50px 20px;
 
     animation: memoryAppear 1.5s ease forwards;
 
@@ -804,13 +797,32 @@ body {
 
 .memory-symbol {
 
-    font-size: 30px;
+    font-size: 32px;
 
     color: var(--purple-light);
 
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 
     animation: floatingSymbol 3s ease-in-out infinite;
+
+}
+
+
+.memory-mode-label {
+
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    border: 1px solid rgba(185,160,201,0.4);
+
+    color: var(--purple-light);
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
 
 }
 
@@ -832,15 +844,15 @@ body {
 
 .memory-text {
 
-    max-width: 500px;
+    max-width: 520px;
 
-    margin: 0 auto;
+    margin: auto;
 
     color: var(--muted);
 
-    font-size: 15px;
-
     line-height: 1.8;
+
+    font-size: 15px;
 
 }
 
@@ -858,13 +870,37 @@ body {
 }
 
 
+.memory-divider {
+
+    width: 60px;
+
+    height: 1px;
+
+    background: var(--purple);
+
+    margin: 40px auto 25px;
+
+}
+
+
+.memory-caption {
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+    color: #777;
+
+}
+
+
 @keyframes memoryAppear {
 
     from {
 
         opacity: 0;
 
-        transform: translateY(30px);
+        transform: translateY(35px);
 
     }
 
@@ -897,6 +933,333 @@ body {
 
 
 /* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-section {
+
+    background: #0f0e12;
+
+    padding-top: 160px;
+
+}
+
+
+.gallery-header {
+
+    max-width: 800px;
+
+    margin: 0 auto 80px;
+
+}
+
+
+.gallery-header h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 8vw, 100px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+}
+
+
+.gallery-header h2 em {
+
+    color: var(--purple-light);
+
+}
+
+
+.gallery-intro {
+
+    max-width: 500px;
+
+    margin-top: 30px;
+
+    color: var(--muted);
+
+    line-height: 1.8;
+
+}
+
+
+/* GALLERY GRID */
+
+.gallery {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.gallery-item {
+
+    position: relative;
+
+    border: none;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    background: #1b1920;
+
+    cursor: pointer;
+
+    aspect-ratio: 4 / 5;
+
+}
+
+
+.gallery-item.gallery-large {
+
+    grid-row: span 2;
+
+    aspect-ratio: auto;
+
+}
+
+
+.gallery-item.gallery-wide {
+
+    grid-column: span 2;
+
+    aspect-ratio: 16 / 8;
+
+}
+
+
+.gallery-item img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.8s ease,
+        filter 0.8s ease;
+
+    filter: saturate(0.8);
+
+}
+
+
+.gallery-item:hover img {
+
+    transform: scale(1.05);
+
+    filter: saturate(1);
+
+}
+
+
+.gallery-item::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 60%,
+            rgba(0,0,0,0.65)
+        );
+
+    pointer-events: none;
+
+}
+
+
+.photo-number {
+
+    position: absolute;
+
+    bottom: 18px;
+
+    left: 20px;
+
+    z-index: 2;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: white;
+
+}
+
+
+.gallery-footer {
+
+    text-align: center;
+
+    margin-top: 70px;
+
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+}
+
+
+/* =========================================================
+   PHOTO VIEWER
+========================================================= */
+
+.photo-viewer {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 800;
+
+    background: rgba(8,7,10,0.96);
+
+    backdrop-filter: blur(12px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+
+}
+
+
+.viewer-content {
+
+    max-width: 1000px;
+
+    width: 85%;
+
+    max-height: 90vh;
+
+    text-align: center;
+
+}
+
+
+.viewer-content img {
+
+    max-width: 100%;
+
+    max-height: 75vh;
+
+    object-fit: contain;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,0.6);
+
+}
+
+
+.viewer-info {
+
+    margin-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #888;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.viewer-close,
+.viewer-prev,
+.viewer-next {
+
+    position: absolute;
+
+    border: none;
+
+    background: none;
+
+    color: var(--cream);
+
+    cursor: pointer;
+
+}
+
+
+.viewer-close {
+
+    top: 25px;
+
+    right: 35px;
+
+    font-size: 35px;
+
+}
+
+
+.viewer-prev,
+.viewer-next {
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 35px;
+
+    padding: 30px;
+
+}
+
+
+.viewer-prev {
+
+    left: 15px;
+
+}
+
+
+.viewer-next {
+
+    right: 15px;
+
+}
+
+
+.viewer-prev:hover,
+.viewer-next:hover,
+.viewer-close:hover {
+
+    color: var(--purple-light);
+
+}
+
+
+/* =========================================================
    QUOTE
 ========================================================= */
 
@@ -913,8 +1276,6 @@ body {
     text-align: center;
 
     position: relative;
-
-    overflow: hidden;
 
     background:
 
@@ -1062,7 +1423,7 @@ blockquote {
 
     inset: 0;
 
-    z-index: 500;
+    z-index: 900;
 
     background: rgba(10,8,12,0.88);
 
@@ -1390,7 +1751,74 @@ footer small {
 
     #memoryTitle {
 
-        font-size: 55px;
+        font-size: 52px;
+
+    }
+
+
+    .gallery {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+    }
+
+
+    .gallery-item,
+    .gallery-item.gallery-large,
+    .gallery-item.gallery-wide {
+
+        grid-column: auto;
+
+        grid-row: auto;
+
+        aspect-ratio: 4 / 5;
+
+    }
+
+
+    .gallery-item.gallery-wide {
+
+        aspect-ratio: 4 / 5;
+
+    }
+
+
+    .photo-viewer {
+
+        padding: 20px;
+
+    }
+
+
+    .viewer-content {
+
+        width: 95%;
+
+    }
+
+
+    .viewer-prev,
+    .viewer-next {
+
+        padding: 15px;
+
+        font-size: 25px;
+
+    }
+
+
+    .viewer-prev {
+
+        left: 0;
+
+    }
+
+
+    .viewer-next {
+
+        right: 0;
 
     }
 
