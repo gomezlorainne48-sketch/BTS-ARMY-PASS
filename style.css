@@ -1,0 +1,622 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: 'Montserrat', sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #5b287d,
+            #170d20 55%,
+            #08050b
+        );
+
+    color: white;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+}
+
+/* FONDO */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(180, 110, 255, .15),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(150, 70, 255, .12),
+            transparent 30%
+        );
+
+}
+
+/* PÁGINA */
+
+.page {
+
+    width: min(92%, 600px);
+
+    margin: auto;
+
+    padding: 60px 0 30px;
+
+}
+
+/* HERO */
+
+.hero {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+
+}
+
+.eyebrow {
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    opacity: .65;
+
+    margin-bottom: 15px;
+
+}
+
+.hero h1 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(60px, 15vw, 100px);
+
+    line-height: .8;
+
+    letter-spacing: -4px;
+
+}
+
+.hero h1 span {
+
+    font-weight: 400;
+
+    opacity: .65;
+
+}
+
+.subtitle {
+
+    margin-top: 25px;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    opacity: .6;
+
+}
+
+/* BOARDING PASS */
+
+.boarding-pass {
+
+    background: rgba(255,255,255,.96);
+
+    color: #17121b;
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.4);
+
+}
+
+/* HEADER */
+
+.pass-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.label {
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #8a7890;
+
+}
+
+.pass-header h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 28px;
+
+    margin-top: 5px;
+
+}
+
+.airline {
+
+    font-size: 32px;
+
+    transform: rotate(45deg);
+
+}
+
+/* RUTA */
+
+.route {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+
+    margin: 40px 0;
+
+}
+
+.airport {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.airport:nth-child(3) {
+
+    text-align: right;
+
+}
+
+.airport strong {
+
+    font-size: 40px;
+
+    letter-spacing: -2px;
+
+}
+
+.airport span {
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    color: #8a7890;
+
+}
+
+.flight-line {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+.flight-line .line {
+
+    height: 1px;
+
+    background: #d8d0da;
+
+    flex: 1;
+
+}
+
+.flight-line span {
+
+    font-size: 13px;
+
+    color: #68427c;
+
+}
+
+/* DETALLES */
+
+.details {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+}
+
+.details div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+.details span {
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #958b99;
+
+}
+
+.details strong {
+
+    font-size: 12px;
+
+}
+
+/* DIVISOR */
+
+.divider {
+
+    border-top: 1px dashed #cfc7d1;
+
+    margin: 30px 0;
+
+}
+
+/* MENSAJE */
+
+.ticket-message {
+
+    text-align: center;
+
+}
+
+.ticket-message p {
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #927b9e;
+
+}
+
+.ticket-message h3 {
+
+    margin-top: 8px;
+
+    font-size: 14px;
+
+}
+
+/* COUNTDOWN */
+
+.countdown-section {
+
+    text-align: center;
+
+    padding: 70px 0;
+
+}
+
+.countdown-section h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 35px;
+
+    font-weight: 500;
+
+    margin-bottom: 30px;
+
+}
+
+.countdown {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+}
+
+.time-box {
+
+    background: rgba(255,255,255,.07);
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 15px;
+
+    padding: 18px 5px;
+
+}
+
+.time-box strong {
+
+    display: block;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+}
+
+.time-box span {
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    opacity: .5;
+
+}
+
+/* MENSAJE */
+
+.message-section {
+
+    text-align: center;
+
+    padding: 30px 20px 70px;
+
+}
+
+.star {
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+}
+
+.message-section h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 35px;
+
+    line-height: 1.1;
+
+}
+
+.message-section p {
+
+    margin: 25px auto;
+
+    max-width: 430px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    opacity: .7;
+
+}
+
+.message-section button {
+
+    border: 1px solid rgba(255,255,255,.4);
+
+    background: transparent;
+
+    color: white;
+
+    padding: 15px 25px;
+
+    border-radius: 50px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.message-section button:hover {
+
+    background: white;
+
+    color: #24132e;
+
+}
+
+/* FOOTER */
+
+footer {
+
+    text-align: center;
+
+    padding: 30px 0;
+
+    border-top: 1px solid rgba(255,255,255,.1);
+
+}
+
+footer p {
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    opacity: .5;
+
+}
+
+footer span {
+
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 8px;
+
+    opacity: .3;
+
+}
+
+/* POPUP */
+
+.popup {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(5,2,8,.85);
+
+    backdrop-filter: blur(10px);
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    z-index: 10;
+
+}
+
+.popup-card {
+
+    position: relative;
+
+    max-width: 420px;
+
+    background: #211329;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 25px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+}
+
+.popup-card button {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 18px;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+}
+
+.purple-heart {
+
+    font-size: 50px;
+
+    margin-bottom: 20px;
+
+}
+
+.popup-card h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 30px;
+
+}
+
+.popup-card p {
+
+    margin-top: 20px;
+
+    line-height: 1.7;
+
+    font-size: 13px;
+
+    opacity: .75;
+
+}
+
+.popup-card strong {
+
+    display: block;
+
+    margin-top: 25px;
+
+    letter-spacing: 3px;
+
+}
+
+/* MÓVIL */
+
+@media (max-width: 450px) {
+
+    .page {
+
+        padding-top: 40px;
+
+    }
+
+    .boarding-pass {
+
+        padding: 22px;
+
+    }
+
+    .airport strong {
+
+        font-size: 30px;
+
+    }
+
+    .countdown-section h2 {
+
+        font-size: 28px;
+
+    }
+
+}
