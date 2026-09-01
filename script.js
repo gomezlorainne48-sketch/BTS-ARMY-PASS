@@ -6,7 +6,7 @@
 
 
 /* =========================================================
-   CONCERT DATE
+   CONCERTDATE
 ========================================================= */
 
 /*
@@ -231,10 +231,9 @@ function updateCountdown() {
 
 function updateMemory() {
 
-    const concert =
-        new Date(
-            "October 21, 2026 20:00:00"
-        );
+  const concertDate = 
+  new Date("August 20, 2026 
+  20:00:00").getTime();
 
 
     const now =
