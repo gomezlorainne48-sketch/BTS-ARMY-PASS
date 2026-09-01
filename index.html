@@ -1,262 +1,592 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ARMY PASS | BTS</title>
+    <meta name="description" content="ARIRANG — A journey to remember. BTS WORLD TOUR 2026.">
 
+    <title>ARIRANG — A Journey to Remember</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-    <!-- FONDO -->
+    <!-- =====================================================
+         FILM GRAIN
+    ====================================================== -->
 
-    <div class="background"></div>
+    <div class="film-grain"></div>
 
-    <!-- CONTENIDO -->
 
-    <main class="page">
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
 
-        <section class="hero">
+    <section id="intro" class="intro">
 
-            <p class="eyebrow">
+        <div class="intro-content">
+
+            <p class="intro-small">
                 BTS WORLD TOUR
             </p>
 
             <h1>
-                ARMY<br>
-                <span>PASS</span>
+                ARIRANG
             </h1>
 
-            <p class="subtitle">
-                YOUR JOURNEY BEGINS HERE
+            <p class="intro-subtitle">
+                A JOURNEY TO REMEMBER
             </p>
 
-        </section>
+            <div class="intro-line"></div>
 
-        <!-- BOARDING PASS -->
+            <p class="intro-location">
+                BUENOS AIRES · 2026
+            </p>
 
-        <section class="boarding-pass">
+            <button
+                class="enter-button"
+                onclick="enterExperience()"
+            >
+                ENTER THE JOURNEY
+            </button>
 
-            <div class="pass-header">
+        </div>
 
-                <div>
+    </section>
 
-                    <p class="label">
-                        BOARDING PASS
-                    </p>
 
-                    <h2>
-                        ARIRANG
-                    </h2>
 
-                </div>
+    <!-- =====================================================
+         MAIN EXPERIENCE
+    ====================================================== -->
 
-                <div class="airline">
-                    ✈
-                </div>
+    <main id="mainExperience" class="hidden">
 
-            </div>
 
-            <div class="route">
+        <!-- =================================================
+             HERO
+        ================================================== -->
 
-                <div class="airport">
+        <section class="hero">
 
-                    <strong>SDQ</strong>
+            <div class="hero-overlay"></div>
 
-                    <span>
-                        SANTO DOMINGO
-                    </span>
+            <div class="hero-content">
 
-                </div>
-
-                <div class="flight-line">
-
-                    <div class="line"></div>
-
-                    <span>✦</span>
-
-                    <div class="line"></div>
-
-                </div>
-
-                <div class="airport">
-
-                    <strong>BUE</strong>
-
-                    <span>
-                        BUENOS AIRES
-                    </span>
-
-                </div>
-
-            </div>
-
-            <div class="details">
-
-                <div>
-                    <span>PASSENGER</span>
-                    <strong>ARMY</strong>
-                </div>
-
-                <div>
-                    <span>DATE</span>
-                    <strong>21 OCT 2026</strong>
-                </div>
-
-                <div>
-                    <span>BOARDING</span>
-                    <strong>00:00</strong>
-                </div>
-
-                <div>
-                    <span>SEAT</span>
-                    <strong>A-21</strong>
-                </div>
-
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="ticket-message">
-
-                <p>
-                    THIS IS YOUR SIGN
+                <p class="eyebrow">
+                    BTS WORLD TOUR
                 </p>
 
-                <h3>
-                    SEE YOU THERE, ARMY 💜
-                </h3>
+                <h2>
+                    ARIRANG
+                </h2>
+
+                <p class="hero-description">
+                    Every journey has a beginning.
+                </p>
+
+                <div class="scroll-indicator">
+                    <span></span>
+                    SCROLL TO EXPLORE
+                </div>
 
             </div>
 
         </section>
 
-        <!-- COUNTDOWN -->
 
-        <section class="countdown-section">
+
+        <!-- =================================================
+             STORY
+        ================================================== -->
+
+        <section class="story section">
+
+            <div class="section-number">
+                01
+            </div>
+
+            <div class="story-content">
+
+                <p class="eyebrow">
+                    THE JOURNEY
+                </p>
+
+                <h2>
+                    Some moments<br>
+                    are meant to<br>
+                    <em>stay forever.</em>
+                </h2>
+
+                <p class="story-text">
+                    Hay viajes que comienzan mucho antes de subir a un avión.
+                    Comienzan con una canción, un sueño, una entrada guardada
+                    y la ilusión de vivir algo que parecía imposible.
+                </p>
+
+                <p class="story-text">
+                    Este es el recuerdo de un viaje hacia Buenos Aires,
+                    hacia BTS, hacia ARIRANG.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BOARDING PASS
+        ================================================== -->
+
+        <section class="boarding-section section">
+
+            <div class="section-number">
+                02
+            </div>
+
+            <div class="boarding-wrapper">
+
+                <p class="eyebrow">
+                    YOUR JOURNEY
+                </p>
+
+                <h2>
+                    Boarding Pass
+                </h2>
+
+
+                <div class="boarding-pass">
+
+                    <div class="ticket-top">
+
+                        <div>
+                            <span class="label">
+                                PASSENGER
+                            </span>
+
+                            <strong>
+                                ARMY
+                            </strong>
+                        </div>
+
+                        <div class="ticket-logo">
+                            ARIRANG
+                        </div>
+
+                    </div>
+
+
+                    <div class="route">
+
+                        <div class="airport">
+
+                            <span class="airport-code">
+                                SDQ
+                            </span>
+
+                            <span class="city">
+                                SANTO DOMINGO
+                            </span>
+
+                        </div>
+
+
+                        <div class="route-line">
+
+                            <span>
+                                ✦
+                            </span>
+
+                            <div></div>
+
+                            <span>
+                                ✦
+                            </span>
+
+                        </div>
+
+
+                        <div class="airport">
+
+                            <span class="airport-code">
+                                BUE
+                            </span>
+
+                            <span class="city">
+                                BUENOS AIRES
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ticket-details">
+
+                        <div>
+                            <span class="label">
+                                DATE
+                            </span>
+
+                            <strong>
+                                21 OCT 2026
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span class="label">
+                                BOARDING
+                            </span>
+
+                            <strong>
+                                00:00
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span class="label">
+                                FLIGHT
+                            </span>
+
+                            <strong>
+                                AR-1021
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span class="label">
+                                GATE
+                            </span>
+
+                            <strong>
+                                07
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span class="label">
+                                SEAT
+                            </span>
+
+                            <strong>
+                                A-21
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="ticket-bottom">
+
+                        <div class="barcode">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <p>
+                            ARMY · ARIRANG · BUE · 2026
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             COUNTDOWN / MEMORY
+        ================================================== -->
+
+        <section class="countdown-section section">
+
+            <div class="section-number">
+                03
+            </div>
+
+
+            <!-- BEFORE CONCERT -->
+
+            <div
+                id="beforeConcert"
+                class="countdown-container"
+            >
+
+                <p class="eyebrow">
+                    THE COUNTDOWN
+                </p>
+
+                <h2>
+                    Until we meet.
+                </h2>
+
+                <div class="countdown">
+
+                    <div class="time-box">
+
+                        <span id="days">
+                            00
+                        </span>
+
+                        <small>
+                            DAYS
+                        </small>
+
+                    </div>
+
+
+                    <div class="time-box">
+
+                        <span id="hours">
+                            00
+                        </span>
+
+                        <small>
+                            HOURS
+                        </small>
+
+                    </div>
+
+
+                    <div class="time-box">
+
+                        <span id="minutes">
+                            00
+                        </span>
+
+                        <small>
+                            MINUTES
+                        </small>
+
+                    </div>
+
+
+                    <div class="time-box">
+
+                        <span id="seconds">
+                            00
+                        </span>
+
+                        <small>
+                            SECONDS
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <p class="countdown-date">
+                    21 OCTOBER 2026 · BUENOS AIRES
+                </p>
+
+            </div>
+
+
+
+            <!-- AFTER CONCERT -->
+
+            <div
+                id="afterConcert"
+                class="memory-container hidden"
+            >
+
+                <div class="memory-symbol">
+                    ✦
+                </div>
+
+                <p class="eyebrow">
+                    THE JOURNEY CONTINUES
+                </p>
+
+                <h2 id="memoryTitle">
+                    Hace 0 días<br>
+                    vivimos esto.
+                </h2>
+
+                <p class="memory-text">
+                    Y aunque el concierto terminó,
+                    hay momentos que nunca terminan.
+                </p>
+
+                <p class="memory-date">
+                    BUENOS AIRES · 21 OCTOBER 2026
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             QUOTE
+        ================================================== -->
+
+        <section class="quote-section">
+
+            <div class="quote-overlay"></div>
+
+            <div class="quote-content">
+
+                <span class="quote-mark">
+                    “
+                </span>
+
+                <blockquote>
+                    The best journeys<br>
+                    become memories.
+                </blockquote>
+
+                <span class="quote-mark closing">
+                    ”
+                </span>
+
+                <p>
+                    ARIRANG · 2026
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SECRET MESSAGE
+        ================================================== -->
+
+        <section class="secret-section section">
+
+            <div class="section-number">
+                04
+            </div>
 
             <p class="eyebrow">
-                COUNTDOWN
+                ONE LAST THING
             </p>
 
             <h2>
-                UNTIL WE MEET
+                There is something<br>
+                <em>waiting for you.</em>
             </h2>
 
-            <div class="countdown">
-
-                <div class="time-box">
-                    <strong id="days">00</strong>
-                    <span>DAYS</span>
-                </div>
-
-                <div class="time-box">
-                    <strong id="hours">00</strong>
-                    <span>HOURS</span>
-                </div>
-
-                <div class="time-box">
-                    <strong id="minutes">00</strong>
-                    <span>MINUTES</span>
-                </div>
-
-                <div class="time-box">
-                    <strong id="seconds">00</strong>
-                    <span>SECONDS</span>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- MENSAJE -->
-
-        <section class="message-section">
-
-            <div class="star">
-                ✦
-            </div>
-
-            <h2>
-                A LITTLE MESSAGE<br>
-                FOR YOU
-            </h2>
-
-            <p>
-                El viaje no termina cuando aterrizamos.
-                Algunos recuerdos están hechos para
-                quedarse para siempre.
-            </p>
-
-            <button onclick="openMessage()">
-                OPEN YOUR MESSAGE
+            <button
+                class="secret-button"
+                onclick="openMessage()"
+            >
+                OPEN THE MESSAGE
             </button>
 
         </section>
 
-        <!-- FOOTER -->
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
 
         <footer>
 
             <p>
-                MADE WITH LOVE FOR ARMY
+                ARIRANG
             </p>
 
             <span>
-                BTS · ARIRANG · 2026
+                A JOURNEY TO REMEMBER
             </span>
+
+            <small>
+                BTS WORLD TOUR · BUENOS AIRES · 2026
+            </small>
 
         </footer>
 
     </main>
 
-    <!-- POPUP -->
 
-    <div id="message" class="popup">
 
-        <div class="popup-card">
+    <!-- =====================================================
+         SECRET MESSAGE MODAL
+    ====================================================== -->
 
-            <button onclick="closeMessage()">
+    <div
+        id="messageModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+            <button
+                class="close-button"
+                onclick="closeMessage()"
+            >
                 ×
             </button>
 
-            <div class="purple-heart">
-                💜
-            </div>
+            <p class="eyebrow">
+                FOR YOU, ARMY
+            </p>
 
             <h2>
-                DEAR ARMY
+                You made it.
             </h2>
 
             <p>
-                Que este viaje esté lleno de música,
-                emoción, sonrisas y recuerdos que
-                puedas guardar para siempre.
+                Guarda este momento.
+                Porque algún día mirarás atrás
+                y recordarás exactamente cómo
+                se sintió estar aquí.
             </p>
 
-            <p>
-                Nos vemos en Buenos Aires.
-                ✈️💜
+            <p class="modal-signature">
+                ARIRANG · 2026
             </p>
-
-            <strong>
-                BORAHAAAAE!
-            </strong>
 
         </div>
 
     </div>
 
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
-
 </html>
+```
