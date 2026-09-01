@@ -1,3 +1,4 @@
+```javascript
 /* =========================================================
    ARIRANG — BTS WORLD TOUR
    JAVASCRIPT
@@ -396,3 +397,4 @@ setInterval(
     updateCountdown,
     1000
 );
+```
