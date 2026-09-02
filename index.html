@@ -1,74 +1,323 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BTS - Arirang World Tour</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Serif+KR:wght@300;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ARIRANG — A Journey with BTS & ARMY</title>
+
+    <meta
+        name="description"
+        content="Un espacio creado para BTS y ARMY. Cuenta regresiva, mensajes y recuerdos del concierto."
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
 </head>
+
 <body>
 
-  <div class="background-overlay"></div>
+    <!-- =========================
+         HERO
+    ========================== -->
 
-  <main class="container">
-    <header class="header">
-      <span class="sub-title">WORLD TOUR REMINDER</span>
-      <h1 class="album-title">아리랑 : ARIRANG</h1>
-      <div class="divider"></div>
-      <p class="concert-date">13 DE JUNIO, 2027 • SEOUL, SOUTH KOREA</p>
+    <header class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                BTS
+                <span>ARIRANG</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#countdown">Countdown</a>
+                <a href="#army">ARMY</a>
+                <a href="#memories">Memories</a>
+            </div>
+
+        </nav>
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                BTS WORLD TOUR
+            </p>
+
+            <h1>
+                ARIRANG
+            </h1>
+
+            <p class="subtitle">
+                A journey shared between BTS and ARMY.
+            </p>
+
+            <a href="#countdown" class="main-button">
+                BEGIN THE JOURNEY
+            </a>
+
+        </div>
+
     </header>
 
-    <section class="countdown-section">
-      <div class="timer-box">
-        <span id="days">00</span>
-        <label>Días</label>
-      </div>
-      <div class="timer-box">
-        <span id="hours">00</span>
-        <label>Horas</label>
-      </div>
-      <div class="timer-box">
-        <span id="minutes">00</span>
-        <label>Minutos</label>
-      </div>
-      <div class="timer-box">
-        <span id="seconds">00</span>
-        <label>Segundos</label>
-      </div>
+
+    <!-- =========================
+         COUNTDOWN
+    ========================== -->
+
+    <section id="countdown" class="countdown-section">
+
+        <p class="section-label">
+            THE WAIT
+        </p>
+
+        <h2>
+            Until we meet again
+        </h2>
+
+        <p class="section-text">
+            Every second brings us closer to another memory.
+        </p>
+
+        <div class="countdown">
+
+            <div class="time-box">
+                <span id="days">00</span>
+                <small>DAYS</small>
+            </div>
+
+            <div class="separator">:</div>
+
+            <div class="time-box">
+                <span id="hours">00</span>
+                <small>HOURS</small>
+            </div>
+
+            <div class="separator">:</div>
+
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <small>MINUTES</small>
+            </div>
+
+            <div class="separator">:</div>
+
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <small>SECONDS</small>
+            </div>
+
+        </div>
+
+        <div id="concert-message" class="concert-message"></div>
+
     </section>
 
-    <section class="card">
-      <h2>Detalles del Evento</h2>
-      <ul>
-        <li><strong>Lugar:</strong> Estadio Olímpico de Seúl</li>
-        <li><strong>Apertura de puertas:</strong> 17:00 KST</li>
-        <li><strong>Venta de boletos:</strong> Interpark Ticket</li>
-      </ul>
-      <button class="btn-reminder" onclick="alert('¡Recordatorio guardado!')">Agregar a mi Calendario</button>
+
+    <!-- =========================
+         ARIRANG
+    ========================== -->
+
+    <section class="arirang-section">
+
+        <div class="arirang-content">
+
+            <p class="section-label">
+                ARIRANG
+            </p>
+
+            <h2>
+                A song about<br>
+                <span>us.</span>
+            </h2>
+
+            <p>
+                ARIRANG represents a journey — the roads we have walked,
+                the memories we have created and the people we have met
+                along the way.
+            </p>
+
+            <p>
+                BTS and ARMY have always shared something that goes beyond
+                music. This space is a small tribute to that journey.
+            </p>
+
+        </div>
+
     </section>
-  </main>
 
-  <script>
-    // Configura la fecha del concierto aquí
-    const concertDate = new Date("June 13, 2027 19:00:00").getTime();
 
-    const updateTimer = () => {
-      const now = new Date().getTime();
-      const difference = concertDate - now;
+    <!-- =========================
+         MESSAGE FOR ARMY
+    ========================== -->
 
-      if (difference > 0) {
-        document.getElementById("days").innerText = Math.floor(difference / (1000 * 60 * 60 * 24));
-        document.getElementById("hours").innerText = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        document.getElementById("minutes").innerText = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        document.getElementById("seconds").innerText = Math.floor((difference % (1000 * 60)) / 1000);
-      }
-    };
+    <section id="army" class="army-section">
 
-    setInterval(updateTimer, 1000);
-    updateTimer();
-  </script>
+        <p class="section-label">
+            DEAR ARMY
+        </p>
+
+        <h2>
+            You made it here.
+        </h2>
+
+        <div class="message-card">
+
+            <p id="army-message">
+                "No matter how far the road takes us,
+                there will always be a place where our memories meet."
+            </p>
+
+            <button id="new-message">
+                ✦ Another message
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONCERT
+    ========================== -->
+
+    <section class="concert-section">
+
+        <div class="concert-card">
+
+            <p class="section-label">
+                ONE NIGHT
+            </p>
+
+            <h2>
+                One stage.<br>
+                One memory.
+            </h2>
+
+            <p>
+                The lights will go down.
+                The ARMY Bombs will light up.
+                And for a moment, thousands of people will become one.
+            </p>
+
+            <div class="purple-line"></div>
+
+            <p class="quote">
+                "Borahae."
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORIES
+    ========================== -->
+
+    <section id="memories" class="memories-section">
+
+        <div id="before-concert">
+
+            <p class="section-label">
+                OUR MEMORIES
+            </p>
+
+            <h2>
+                The gallery opens<br>
+                after the concert.
+            </h2>
+
+            <p>
+                Come back after the show and leave a little piece
+                of your ARIRANG journey here.
+            </p>
+
+            <div class="lock">
+                🔒
+            </div>
+
+        </div>
+
+
+        <div id="after-concert" class="hidden">
+
+            <p class="section-label">
+                ARMY GALLERY
+            </p>
+
+            <h2>
+                We were there.
+            </h2>
+
+            <p>
+                Share your favorite moment from the concert.
+            </p>
+
+            <div class="upload-box">
+
+                <label for="photo">
+                    📸 Choose your concert photo
+                </label>
+
+                <input
+                    type="file"
+                    id="photo"
+                    accept="image/*"
+                >
+
+                <input
+                    type="text"
+                    id="army-name"
+                    placeholder="Your ARMY name"
+                >
+
+                <textarea
+                    id="memory"
+                    placeholder="Tell us about this moment..."
+                ></textarea>
+
+                <button id="submit-memory">
+                    ADD MY MEMORY
+                </button>
+
+            </div>
+
+            <div id="gallery" class="gallery"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            BTS × ARMY
+        </div>
+
+        <p>
+            Made with love for the journey.
+        </p>
+
+        <p class="copyright">
+            ARIRANG • 2026
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
 </body>
 </html>
