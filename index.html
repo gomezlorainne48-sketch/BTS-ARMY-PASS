@@ -1,458 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ARIRANG — A Journey to Remember</title>
-
-    <meta name="description" content="A journey to Buenos Aires — ARIRANG 2026">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTS - Arirang World Tour</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Serif+KR:wght@300;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-    <!-- INTRO -->
-    <section id="intro" class="intro">
+  <div class="background-overlay"></div>
 
-        <div class="intro-background"></div>
+  <main class="container">
+    <header class="header">
+      <span class="sub-title">WORLD TOUR REMINDER</span>
+      <h1 class="album-title">아리랑 : ARIRANG</h1>
+      <div class="divider"></div>
+      <p class="concert-date">13 DE JUNIO, 2027 • SEOUL, SOUTH KOREA</p>
+    </header>
 
-        <div class="intro-content">
-
-            <p class="eyebrow">BTS WORLD TOUR</p>
-
-            <h1>ARIRANG</h1>
-
-            <p class="intro-subtitle">
-                A JOURNEY TO REMEMBER
-            </p>
-
-            <div class="intro-line"></div>
-
-            <p class="intro-location">
-                BUENOS AIRES · 2026
-            </p>
-
-            <button id="enterButton" class="enter-button">
-                ENTER THE JOURNEY
-                <span>→</span>
-            </button>
-
-        </div>
-
-        <div class="intro-bottom">
-            <span>SDQ</span>
-            <span>✦</span>
-            <span>BUE</span>
-        </div>
-
+    <section class="countdown-section">
+      <div class="timer-box">
+        <span id="days">00</span>
+        <label>Días</label>
+      </div>
+      <div class="timer-box">
+        <span id="hours">00</span>
+        <label>Horas</label>
+      </div>
+      <div class="timer-box">
+        <span id="minutes">00</span>
+        <label>Minutos</label>
+      </div>
+      <div class="timer-box">
+        <span id="seconds">00</span>
+        <label>Segundos</label>
+      </div>
     </section>
 
-
-    <!-- MAIN EXPERIENCE -->
-    <main id="mainExperience" class="hidden">
-
-        <!-- HERO -->
-        <section class="hero">
-
-            <div class="hero-overlay"></div>
-
-            <div class="hero-content">
-
-                <p class="eyebrow">BTS WORLD TOUR · ARIRANG</p>
-
-                <h2>
-                    Every journey<br>
-                    <em>has a beginning.</em>
-                </h2>
-
-                <div class="hero-route">
-                    <span>SDQ</span>
-                    <div class="route-line"></div>
-                    <span>BUE</span>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- STORY -->
-        <section class="story section">
-
-            <div class="section-label">
-                <span>01</span>
-                THE JOURNEY
-            </div>
-
-            <div class="story-grid">
-
-                <div>
-                    <p class="large-text">
-                        Some journeys are measured in miles.
-                        Others are measured in <em>memories.</em>
-                    </p>
-                </div>
-
-                <div class="story-copy">
-                    <p>
-                        From Santo Domingo to Buenos Aires,
-                        this wasn't just a flight.
-                    </p>
-
-                    <p>
-                        It was the beginning of a moment
-                        you had imagined for years.
-                    </p>
-
-                    <p class="signature">
-                        ARMY · 2026
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- BOARDING PASS -->
-        <section class="ticket-section section">
-
-            <div class="section-label">
-                <span>02</span>
-                YOUR BOARDING PASS
-            </div>
-
-            <div class="boarding-pass">
-
-                <div class="ticket-main">
-
-                    <div class="ticket-top">
-                        <span>ARIRANG AIR</span>
-                        <span>WORLD TOUR</span>
-                    </div>
-
-                    <div class="route">
-
-                        <div class="airport">
-                            <strong>SDQ</strong>
-                            <small>SANTO DOMINGO</small>
-                        </div>
-
-                        <div class="plane-route">
-                            <span>✦</span>
-                            <div></div>
-                            <span>✈</span>
-                        </div>
-
-                        <div class="airport airport-right">
-                            <strong>BUE</strong>
-                            <small>BUENOS AIRES</small>
-                        </div>
-
-                    </div>
-
-                    <div class="ticket-info">
-
-                        <div>
-                            <small>DATE</small>
-                            <strong>21 OCT 2026</strong>
-                        </div>
-
-                        <div>
-                            <small>BOARDING</small>
-                            <strong>00:00</strong>
-                        </div>
-
-                        <div>
-                            <small>FLIGHT</small>
-                            <strong>AR-1021</strong>
-                        </div>
-
-                        <div>
-                            <small>GATE</small>
-                            <strong>07</strong>
-                        </div>
-
-                        <div>
-                            <small>SEAT</small>
-                            <strong>A-07</strong>
-                        </div>
-
-                        <div>
-                            <small>PASSENGER</small>
-                            <strong>ARMY</strong>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="ticket-stub">
-
-                    <div class="stub-top">
-                        BOARDING PASS
-                    </div>
-
-                    <div class="stub-route">
-                        <strong>SDQ</strong>
-                        <span>→</span>
-                        <strong>BUE</strong>
-                    </div>
-
-                    <div class="stub-details">
-                        <span>21 OCT</span>
-                        <span>A-07</span>
-                    </div>
-
-                    <div class="barcode">
-                        <i></i><i></i><i></i><i></i><i></i>
-                        <i></i><i></i><i></i><i></i><i></i>
-                        <i></i><i></i><i></i><i></i><i></i>
-                    </div>
-
-                    <small>AR-1021 · ARMY</small>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- COUNTDOWN -->
-        <section class="countdown-section section">
-
-            <div id="beforeConcert">
-
-                <div class="section-label">
-                    <span>03</span>
-                    UNTIL WE MEET
-                </div>
-
-                <h2 class="countdown-heading">
-                    The countdown<br>
-                    <em>has begun.</em>
-                </h2>
-
-                <div class="countdown">
-
-                    <div class="count-box">
-                        <strong id="days">00</strong>
-                        <span>DAYS</span>
-                    </div>
-
-                    <div class="count-box">
-                        <strong id="hours">00</strong>
-                        <span>HOURS</span>
-                    </div>
-
-                    <div class="count-box">
-                        <strong id="minutes">00</strong>
-                        <span>MINUTES</span>
-                    </div>
-
-                    <div class="count-box">
-                        <strong id="seconds">00</strong>
-                        <span>SECONDS</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- MEMORY MODE -->
-            <div id="afterConcert" class="memory-mode hidden">
-
-                <p class="memory-mode-label">
-                    ✦ MEMORY MODE ✦
-                </p>
-
-                <h2 id="memoryTitle">
-                    Hace 0 días<br>
-                    vivimos esto.
-                </h2>
-
-                <p class="memory-text">
-                    El concierto terminó, pero este momento
-                    se quedó para siempre.
-                </p>
-
-                <p class="memory-date">
-                    BUENOS AIRES · 21 OCTOBER 2026
-                </p>
-
-                <div class="memory-divider"></div>
-
-                <p class="memory-caption">
-                    SOME JOURNEYS BECOME MEMORIES.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- MEMORY GALLERY -->
-        <section id="memoryGallery" class="gallery-section hidden">
-
-            <div class="section section-gallery">
-
-                <div class="section-label">
-                    <span>04</span>
-                    MEMORY ARCHIVE
-                </div>
-
-                <h2>
-                    The night we<br>
-                    <em>lived.</em>
-                </h2>
-
-                <p class="gallery-intro">
-                    Six frames from a night that will always
-                    belong to you.
-                </p>
-
-            </div>
-
-            <div class="gallery">
-
-                <button class="gallery-item gallery-large" data-photo="0">
-                    <img src="images/concert-01.jpg" alt="Concert memory 01">
-                    <span class="photo-number">01</span>
-                </button>
-
-                <button class="gallery-item" data-photo="1">
-                    <img src="images/concert-02.jpg" alt="Concert memory 02">
-                    <span class="photo-number">02</span>
-                </button>
-
-                <button class="gallery-item gallery-wide" data-photo="2">
-                    <img src="images/concert-03.jpg" alt="Concert memory 03">
-                    <span class="photo-number">03</span>
-                </button>
-
-                <button class="gallery-item" data-photo="3">
-                    <img src="images/concert-04.jpg" alt="Concert memory 04">
-                    <span class="photo-number">04</span>
-                </button>
-
-                <button class="gallery-item gallery-large" data-photo="4">
-                    <img src="images/concert-05.jpg" alt="Concert memory 05">
-                    <span class="photo-number">05</span>
-                </button>
-
-                <button class="gallery-item" data-photo="5">
-                    <img src="images/concert-06.jpg" alt="Concert memory 06">
-                    <span class="photo-number">06</span>
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- QUOTE -->
-        <section class="quote-section section">
-
-            <div class="quote-mark">“</div>
-
-            <blockquote>
-                We were only passing through a moment,
-                but somehow that moment stayed with us.
-            </blockquote>
-
-            <p>— ARIRANG · 2026</p>
-
-        </section>
-
-
-        <!-- SECRET -->
-        <section class="secret-section section">
-
-            <p class="eyebrow">A LITTLE SOMETHING</p>
-
-            <h2 id="secretTitle">
-                There is something<br>
-                <em>waiting for you.</em>
-            </h2>
-
-            <button id="secretButton" class="secret-button">
-                OPEN THE SECRET
-            </button>
-
-        </section>
-
-
-        <!-- FOOTER -->
-        <footer>
-
-            <div>
-                <strong>ARIRANG</strong>
-                <span>A JOURNEY TO REMEMBER</span>
-            </div>
-
-            <p>SDQ → BUE · 2026</p>
-
-        </footer>
-
-    </main>
-
-
-    <!-- PHOTO VIEWER -->
-    <div id="photoViewer" class="photo-viewer hidden">
-
-        <button id="viewerClose" class="viewer-close">×</button>
-
-        <button id="viewerPrev" class="viewer-arrow viewer-prev">‹</button>
-
-        <div class="viewer-content">
-
-            <img id="viewerImage" src="" alt="Concert memory">
-
-            <div class="viewer-info">
-                <span id="viewerNumber">01 / 06</span>
-            </div>
-
-        </div>
-
-        <button id="viewerNext" class="viewer-arrow viewer-next">›</button>
-
-    </div>
-
-
-    <!-- SECRET MODAL -->
-    <div id="messageModal" class="message-modal hidden">
-
-        <div class="modal-card">
-
-            <button id="modalClose" class="modal-close">×</button>
-
-            <p class="eyebrow">A MESSAGE FOR YOU</p>
-
-            <h2 id="modalTitle">
-                See you there.
-            </h2>
-
-            <p id="modalText">
-                The best memories are the ones
-                we haven't lived yet.
-            </p>
-
-            <div class="modal-symbol">✦</div>
-
-        </div>
-
-    </div>
-
+    <section class="card">
+      <h2>Detalles del Evento</h2>
+      <ul>
+        <li><strong>Lugar:</strong> Estadio Olímpico de Seúl</li>
+        <li><strong>Apertura de puertas:</strong> 17:00 KST</li>
+        <li><strong>Venta de boletos:</strong> Interpark Ticket</li>
+      </ul>
+      <button class="btn-reminder" onclick="alert('¡Recordatorio guardado!')">Agregar a mi Calendario</button>
+    </section>
+  </main>
+
+  <script>
+    // Configura la fecha del concierto aquí
+    const concertDate = new Date("June 13, 2027 19:00:00").getTime();
+
+    const updateTimer = () => {
+      const now = new Date().getTime();
+      const difference = concertDate - now;
+
+      if (difference > 0) {
+        document.getElementById("days").innerText = Math.floor(difference / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerText = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("minutes").innerText = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById("seconds").innerText = Math.floor((difference % (1000 * 60)) / 1000);
+      }
+    };
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
 </body>
 </html>
