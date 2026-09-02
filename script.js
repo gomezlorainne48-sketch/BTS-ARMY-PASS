@@ -1,50 +1,261 @@
-// Fecha del concierto: 21 de Octubre de 2026, 19:00 KST
-// (Mes 9 representa Octubre, ya que los meses en JavaScript van de 0 a 11)
-const concertDate = new Date(2026, 9, 21, 19, 0, 0).getTime();
+// ========================================
+// CONFIGURACIÓN
+// ========================================
 
-const updateTimer = () => {
-  const now = new Date().getTime();
-  const difference = concertDate - now;
-  const sectionTitle = document.querySelector(".sub-title");
-  const countdownSection = document.querySelector(".countdown-section");
+// Fecha del concierto
+const concertDate = new Date("October 21, 2026 20:00:00").getTime();
 
-  if (difference > 0) {
-    // ANTES DEL CONCIERTO: Cuenta regresiva
-    sectionTitle.innerText = "WORLD TOUR REMINDER";
-    
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-    document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-    document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-    document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
-  } else {
-    // DESPUÉS DEL CONCIERTO: Días transcurridos
-    const timePassed = Math.abs(difference);
-    const daysPassed = Math.floor(timePassed / (1000 * 60 * 60 * 24));
+// ========================================
+// COUNTDOWN
+// ========================================
 
-    sectionTitle.innerText = "MEMORIES OF THE TOUR";
+const countdown = setInterval(function () {
 
-    // Reemplaza el contador por el mensaje
-    countdownSection.innerHTML = `
-      <div class="timer-box" style="width: 100%; border-color: var(--gold-accent); padding: 20px;">
-        <span style="font-size: 1.4rem; color: var(--paper-cream); font-weight: normal;">
-          Hace <strong style="color: var(--gold-accent); font-size: 2.2rem;">${daysPassed}</strong> días de lo que vivimos
-        </span>
-      </div>
-    `;
+    const now = new Date().getTime();
 
-    // Cambia el texto del botón al finalizar
-    const btn = document.querySelector(".btn-reminder");
-    if (btn) {
-      btn.innerText = "Revivir momentos";
-      btn.onclick = () => alert("¡Gracias por compartir este recuerdo con BTS!");
+    const distance = concertDate - now;
+
+
+    if (distance <= 0) {
+
+        clearInterval(countdown);
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        document.getElementById("concert-message").innerHTML =
+            "The night we waited for has arrived. 💜";
+
+        unlockGallery();
+
+        return;
     }
-  }
-};
 
-setInterval(updateTimer, 1000);
-updateTimer();
+
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
+
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+
+}, 1000);
+
+
+// ========================================
+// MENSAJES PARA ARMY
+// ========================================
+
+const messages = [
+
+    "No matter how far the road takes us, there will always be a place where our memories meet.",
+
+    "We found each other through music, and somehow became home.",
+
+    "Seven voices. Millions of hearts. One unforgettable journey.",
+
+    "ARMY is not just a fandom. It is a collection of memories.",
+
+    "Some nights become memories. Some memories become forever.",
+
+    "Wherever BTS goes, a little piece of ARMY goes with them.",
+
+    "The lights may turn off, but this memory will stay.",
+
+    "We were young, we were here, and we lived this moment together.",
+
+    "Until the next chapter, let's keep walking together."
+];
+
+
+let currentMessage = 0;
+
+const messageButton =
+    document.getElementById("new-message");
+
+const messageText =
+    document.getElementById("army-message");
+
+
+messageButton.addEventListener("click", function () {
+
+    currentMessage++;
+
+    if (currentMessage >= messages.length) {
+        currentMessage = 0;
+    }
+
+    messageText.style.opacity = "0";
+
+    setTimeout(function () {
+
+        messageText.textContent =
+            `"${messages[currentMessage]}"`;
+
+        messageText.style.opacity = "1";
+
+    }, 250);
+
+});
+
+
+// ========================================
+// GALERÍA
+// ========================================
+
+function unlockGallery() {
+
+    document
+        .getElementById("before-concert")
+        .classList.add("hidden");
+
+    document
+        .getElementById("after-concert")
+        .classList.remove("hidden");
+
+}
+
+
+// ========================================
+// SUBIR MEMORIA
+// ========================================
+
+const submitButton =
+    document.getElementById("submit-memory");
+
+
+submitButton.addEventListener("click", function () {
+
+    const file =
+        document.getElementById("photo").files[0];
+
+    const name =
+        document.getElementById("army-name").value;
+
+    const memory =
+        document.getElementById("memory").value;
+
+
+    if (!file) {
+
+        alert("Please choose a photo.");
+
+        return;
+    }
+
+
+    if (!name) {
+
+        alert("Please enter your ARMY name.");
+
+        return;
+    }
+
+
+    const reader = new FileReader();
+
+
+    reader.onload = function (event) {
+
+        const gallery =
+            document.getElementById("gallery");
+
+
+        const memoryCard =
+            document.createElement("div");
+
+        memoryCard.className = "memory";
+
+
+        memoryCard.innerHTML = `
+
+            <img
+                src="${event.target.result}"
+                alt="ARMY concert memory"
+            >
+
+            <p>
+                <strong>${escapeHTML(name)}</strong>
+            </p>
+
+            <p>
+                ${escapeHTML(memory)}
+            </p>
+
+        `;
+
+
+        gallery.prepend(memoryCard);
+
+
+        document.getElementById("photo").value = "";
+
+        document.getElementById("army-name").value = "";
+
+        document.getElementById("memory").value = "";
+
+    };
+
+
+    reader.readAsDataURL(file);
+
+});
+
+
+// ========================================
+// SEGURIDAD BÁSICA
+// ========================================
+
+function escapeHTML(text) {
+
+    const div = document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+
+// ========================================
+// PRUEBA AUTOMÁTICA DE GALERÍA
+// ========================================
+
+// Cuando llegue la fecha del concierto,
+// la galería se desbloqueará automáticamente.
+
+const currentTime = new Date().getTime();
+
+if (currentTime >= concertDate) {
+
+    unlockGallery();
+
+}
